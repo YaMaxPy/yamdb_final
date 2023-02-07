@@ -5,7 +5,7 @@ from reviews.validators import validate_year
 from users.models import User
 
 NUM_OF_CHARACTERS: int = 15
-
+#
 
 class Category(models.Model):
     name = models.CharField(verbose_name='Название',
