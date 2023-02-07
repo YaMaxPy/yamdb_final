@@ -11,9 +11,9 @@ from rest_framework.permissions import (AllowAny, IsAuthenticated,
                                         IsAuthenticatedOrReadOnly)
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
+
 from reviews.models import Category, Genre, Review, Title
 from users.models import User
-
 from .filters import TitlesFilter
 from .pagination import UsersPagination
 from .permissions import (IsAdmin, IsAdminModeratorAuthorOrReadOnly,
