@@ -6,7 +6,7 @@ services:
     env_file:
       - ./.env
   web:
-    image: ${{ secrets.DOCKER_USERNAME }}/api_yamdb-web:latest
+    image: radchenkomaxxsim/api_yamdb-web:latest
     restart: always
     volumes:
       - static_value:/app/static/
