@@ -48,7 +48,7 @@ jobs:
           with:
             push: true
             context: ./api_yamdb/
-            tags: radchenkomaxxsim/api_yamdb-web:latest 
+            tags: ${{ secrets.DOCKER_USERNAME }}/api_yamdb-web:latest 
   
   deploy:
     runs-on: ubuntu-latest
@@ -62,6 +62,7 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
         script: |
+          sudo docker pull ${{ secrets.DOCKER_USERNAME }}/api_yamdb-web:latest
           sudo docker-compose stop
           sudo docker-compose rm web
           touch .env
